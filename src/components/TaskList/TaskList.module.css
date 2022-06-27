@@ -1,0 +1,157 @@
+.container {
+  width: 100%;
+  /* max-width: 1250px; */
+  /* height: 100vh; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -27px;
+  
+}
+
+.form_container {
+  width: 738px;
+  display: flex;
+
+}
+.form_container div {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+.form_container div input {
+  width: 100%;
+  height: 54px;
+  border-radius: 6px;
+  border:  none;
+  background: var(--gray500);
+  padding-left: 8px;
+  color: var(--gray200)
+}
+.form_container div button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:  16px;
+  border-radius: 6px;
+  border:  none;
+  gap: 8px;
+  color: var(--gray200);
+  background: var(--blue);
+}
+
+.listWrapper {
+  margin-top: 30px;
+  width: 738px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listWrapper div {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.conclui {
+  justify-content: space-between;
+  font-weight: bold;
+  padding: 1rem;
+}
+.criadas {
+  color: var(--blue);
+}
+.concluidas {
+  color:var(--purple)
+}
+.criadas span {
+  height: 25px;
+  width: 35px;
+  background:var(--gray400);
+  border-radius: 16px;
+  color:var(--gray200);
+  display: inline-block;
+  text-align: center;
+
+}
+
+.concluidas span {
+  height: 25px;
+  width: 60px;
+  background:var(--gray400);
+  border-radius: 16px;
+  color:var(--gray200);
+  display: inline-block;
+  text-align: center;
+
+}
+.list {
+  list-style: none;
+}
+
+.listItem {
+  padding: 8px;
+  height: 72px;
+  border-radius: 8px;
+  background: var(--gray500);
+  display: flex;
+  align-items: center;
+}
+
+.checkInput{
+  min-width: 1.2rem;
+  height: 1.3em;
+  margin-left: 13px;
+  margin-right: 13px;
+  background-color: transparent;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  flex-basis: 200px;
+  flex-grow: 0;
+
+}
+.checkInput:checked {
+  background: url("../../Vector.png") var(--purple) no-repeat center ;
+}
+.removeItem {
+  border: none;
+  height: 24px;
+  width: 24px;
+  background: var(--gray500);
+}
+.taskcontainer {
+  border-top: 2px solid  var(--gray300);
+  border-radius: 6px ;
+  width: 100%;
+  margin-top: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.taskWrapper {
+  margin-top: 40px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.taskWrapper div {
+  width: 100%;
+  justify-content: center;
+}
+.taskWrapper img {
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.taskcontainer p {
+  color: var(--gray300);
+}

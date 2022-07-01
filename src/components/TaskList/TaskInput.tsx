@@ -19,7 +19,7 @@ export default function TaskInput({
           onChange={(e)=> onChange?.(e)}
         />
         <button type="submit" data-testid="add-task-button" onClick={onClick}>
-          criar
+          Criar
           <FiPlusCircle size={16} color="#fff" />
         </button>
       </div>

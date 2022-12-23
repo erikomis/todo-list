@@ -5,61 +5,40 @@ import { TaskEmpty } from "./TaskEmpty";
 import TaskInput from "./TaskInput";
 import { TaskItem } from "./TaskItem";
 import { TaskHeader } from "./TaskHeader";
+import { Task } from "../../containers/TaskList";
 
-interface Task {
-  id: number;
-  title: string;
-  isComplete: boolean;
+interface TaskListProps {
+  handleCreateNewTask: () => void;
+  handleRemoveTask: (id: number) => void;
+  handleToggleTaskCompletion: (id: number) => void;
+  newTaskTitle: string;
+  tasks: Task[];
+  tasksConcluidas: number;
+  totalTasks: number;
+  handleChangeNewTaskTitle: (
+    event: React.ChangeEvent<HTMLInputElement | HTMLButtonElement>
+  ) => void;
 }
-
-export function TaskList() {
-
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [newTaskTitle, setNewTaskTitle] = useState("");
-
-  function handleCreateNewTask() {
-    if (!newTaskTitle) {
-      return;
-    }
-    const newTask = {
-      id: Math.random(),
-      title: newTaskTitle,
-      isComplete: false,
-    };
-    setTasks((oldTask) => [...oldTask, newTask]);
-    setNewTaskTitle("");
-  }
-
-  function handleToggleTaskCompletion(id: number) {
-    const newTasks = tasks.map((task) =>
-      task.id === id
-        ? {
-            ...task,
-            isComplete: !task.isComplete,
-          }
-        : task
-    );
-    setTasks(newTasks);
-  }
-
-  function handleRemoveTask(id: number) {
-    setTasks((item) => item.filter((value) => value.id != id));
-  }
-  const tasksConcluidas = tasks.reduce(
-    (acc, value) => (value.isComplete ? acc + 1 : acc),
-    0
-  );
-  const totalTasks = tasks.length;
-
+export function TaskList({
+  handleCreateNewTask,
+  handleRemoveTask,
+  handleToggleTaskCompletion,
+  newTaskTitle,
+  tasks,
+  tasksConcluidas,
+  totalTasks,
+  handleChangeNewTaskTitle,
+}: TaskListProps) {
+  console.log(tasks);
   return (
     <section className={styles.container}>
       <TaskInput
-        onChange={(e) => setNewTaskTitle(e.target.value)}
+        onChange={(e) => handleChangeNewTaskTitle(e)}
         onClick={handleCreateNewTask}
         value={newTaskTitle}
       />
       <main className={styles.listWrapper}>
-        <TaskHeader tasksConcluidas={tasksConcluidas}  totalTasks={totalTasks}/>
+        <TaskHeader tasksConcluidas={tasksConcluidas} totalTasks={totalTasks} />
         {tasks.map((item) => (
           <TaskItem
             key={item.id}

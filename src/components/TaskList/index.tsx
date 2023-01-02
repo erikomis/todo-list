@@ -39,14 +39,16 @@ export function TaskList({
       />
       <main className={styles.listWrapper}>
         <TaskHeader tasksConcluidas={tasksConcluidas} totalTasks={totalTasks} />
-        {tasks.map((item) => (
-          <TaskItem
-            key={item.id}
-            task={item}
-            handleRemoveTask={handleRemoveTask}
-            handleToggleTaskCompletion={handleToggleTaskCompletion}
-          />
-        ))}
+        <ul className={styles.list}>
+          {tasks.map((item) => (
+            <TaskItem
+              key={item.id}
+              task={item}
+              handleRemoveTask={handleRemoveTask}
+              handleToggleTaskCompletion={handleToggleTaskCompletion}
+            />
+          ))}
+        </ul>
         {tasks.length === 0 && <TaskEmpty />}
       </main>
     </section>

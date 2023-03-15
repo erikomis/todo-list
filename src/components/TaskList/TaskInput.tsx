@@ -17,6 +17,7 @@ export default function TaskInput({
           type="text"
           placeholder="Adicionar novo todo"
           onChange={(e)=> onChange?.(e)}
+          {...rest}
         />
         <button type="submit" data-testid="add-task-button" onClick={onClick}>
           Criar
